@@ -4,17 +4,11 @@ The official portal website for MTs Negeri 2 Kota Semarang, providing access to 
 
 ## File Structure
 `Matsanda Hub`
-
 `├ assets/`
-
 `│ ├ matsanda_hub-icon.png`
-
 `│ └ matsanda_hub-meta-banner.png`
-
 `├ index.html`
-
 `├ style.css`
-
 `└ script.js`
 
 ### Author: TIKP Matsanda OSIM - AqmarAja19
