@@ -1,0 +1,532 @@
+
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
+
+:root {
+    --bg-primary: #050B18;
+    --bg-secondary: #0B1930;
+    --bg-card: #0D1B33;
+
+    --blue-primary: #0D47A1;
+    --blue-light: #163B6B;
+
+    --neon-green: #39FF88;
+    --neon-soft: rgba(57, 255, 136, 0.35);
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #A5B4CC;
+    --text-muted: #71839F;
+
+    --border-color: rgba(57, 255, 136, 0.35);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================
+   2. RESET & GLOBAL STYLE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(100% - 40px, 1100px);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   3. BACKGROUND DECORATION
+========================================= */
+
+.background-glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+
+    width: 600px;
+    height: 400px;
+
+    transform: translateX(-50%);
+
+    background: rgba(13, 71, 161, 0.18);
+    filter: blur(120px);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================
+   4. HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid rgba(57, 255, 136, 0.15);
+    background: rgba(5, 11, 24, 0.85);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.header-container {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--neon-green);
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.main-content {
+    flex: 1;
+}
+
+.hero {
+    padding: 90px 0 75px;
+    text-align: center;
+}
+
+.hero-label {
+    display: inline-block;
+
+    padding: 7px 15px;
+    margin-bottom: 22px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+
+    color: var(--neon-green);
+    background: rgba(57, 255, 136, 0.06);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--neon-green);
+
+    text-shadow: 0 0 25px rgba(57, 255, 136, 0.2);
+}
+
+.hero-description {
+    max-width: 580px;
+    margin: 22px auto 0;
+
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   6. LINK SECTION
+========================================= */
+
+.link-section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+
+/* Link Group */
+
+.link-group {
+    margin-bottom: 35px;
+}
+
+.group-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.group-indicator {
+    width: 7px;
+    height: 7px;
+
+    background: var(--neon-green);
+    border-radius: 2px;
+
+    box-shadow: 0 0 8px var(--neon-green);
+}
+
+
+/* Link Grid */
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+
+/* Link Card */
+
+.link-card {
+    min-height: 95px;
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: linear-gradient(
+        135deg,
+        var(--bg-secondary),
+        var(--bg-card)
+    );
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+
+    transition: var(--transition);
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--neon-green);
+
+    box-shadow:
+        0 0 0 1px rgba(57, 255, 136, 0.08),
+        0 8px 25px rgba(57, 255, 136, 0.10);
+}
+
+
+/* Card Icon */
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(13, 71, 161, 0.3);
+    border-radius: var(--radius-sm);
+
+    font-size: 20px;
+}
+
+
+/* Card Content */
+
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card-content p {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* Card Arrow */
+
+.card-arrow {
+    color: var(--neon-green);
+    font-size: 20px;
+
+    transition: var(--transition);
+}
+
+.link-card:hover .card-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   7. FOOTER
+========================================= */
+
+.footer {
+    border-top: 1px solid rgba(57, 255, 136, 0.15);
+    background: rgba(7, 16, 32, 0.8);
+}
+
+.footer-container {
+    min-height: 120px;
+    padding: 25px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.footer-credit {
+    text-align: right;
+}
+
+.footer-credit p {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.footer-credit span {
+    color: var(--neon-green);
+    font-weight: 600;
+}
+
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 70px 0 60px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .link-section {
+        max-width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-credit {
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .header-container {
+        min-height: 65px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-name {
+        font-size: 13px;
+    }
+
+    .header-status {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 65px 0 50px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+        padding: 0 5px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    /* Single Column on Mobile */
+
+    .link-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .link-card {
+        min-height: 85px;
+        padding: 15px;
+    }
+
+    .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .card-content h4 {
+        font-size: 13px;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+    .link-section {
+        padding-bottom: 55px;
+    }
+
+}
+
+
+/* =========================================
+   9. TOUCH DEVICE OPTIMIZATION
+========================================= */
+
+@media (hover: none) {
+
+    .link-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .link-card:active {
+        border-color: var(--neon-green);
+        background: #102344;
+    }
+
+}
+
+
+/* =========================================
+   10. ACCESSIBILITY
+========================================= */
+
+.link-card:focus-visible {
+    outline: 2px solid var(--neon-green);
+    outline-offset: 4px;
+}
