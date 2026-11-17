@@ -1,0 +1,3 @@
+Ini hanya File Sementara yang digunakan untuk Membuat Folder Baru di Github
+
+This is just a temporary file used to create a new folder on GitHub.
